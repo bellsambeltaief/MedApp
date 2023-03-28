@@ -1,14 +1,15 @@
-import 'package:doc_app/views/sign/button/account_text.dart';
+
 import 'package:doc_app/views/sign/button/button_icon_text_horizontal.dart';
 import 'package:doc_app/views/sign/button/button_login.dart';
 import 'package:doc_app/views/sign/or_divider.dart';
-import 'package:doc_app/views/sign/sign_up.dart';
+
 import 'package:doc_app/views/sign/text_field_login.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
+  
   static String routeName="/signIn";
-  static Page page() => const MaterialPage<void>(child: SignIn());
+ 
 
   const SignIn({Key? key}) : super(key: key);
 
@@ -44,7 +45,7 @@ class _CwConnexionState extends State<SignIn> {
         children: [
           TextFieldLogin(
             "Email",
-        
+            key: const Key('login_form_email_CWTextField'),
             controller: _email,
             context: context,
             isEmail: true,
@@ -52,7 +53,7 @@ class _CwConnexionState extends State<SignIn> {
           const SizedBox(height: 22),
           TextFieldLogin(
             "Mot de passe",
-          
+            key: const Key('login_form_password_CWTextField'),
             context: context,
             controller: _password,
             isPassword: true,
@@ -93,18 +94,7 @@ class _CwConnexionState extends State<SignIn> {
               ),
             ],
           ),
-          const SizedBox(height: 22),
-          AccountText(
-            onTapped: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SignUp(),
-                ),
-              );
-            },
-            text1: "Nouveau sur Med? S'inscrire",
-          ),
+        
         ],
       ),
     );

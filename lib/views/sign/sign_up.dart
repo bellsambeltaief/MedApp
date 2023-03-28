@@ -1,14 +1,13 @@
-import 'package:doc_app/views/sign/button/account_text.dart';
+
 import 'package:doc_app/views/sign/button/button_icon_text_horizontal.dart';
 import 'package:doc_app/views/sign/button/button_login.dart';
-import 'package:doc_app/views/sign/sign_in.dart';
+
 import 'package:doc_app/views/sign/or_divider.dart';
 import 'package:doc_app/views/sign/text_field_login.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
   static String routeName = "/signUp";
-  static Page page() => const MaterialPage<void>(child: SignUp());
 
   const SignUp({Key? key}) : super(key: key);
 
@@ -96,17 +95,7 @@ class _CwConnexionState extends State<SignUp> {
             ],
           ),
           const SizedBox(height: 22),
-          AccountText(
-            onTapped: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SignIn(),
-                ),
-              );
-            },
-            text1: "Déja membre? Se connecter",
-          ),
+       
         ],
       ),
     );
