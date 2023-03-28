@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Sign extends StatefulWidget {
- 
   const Sign({super.key});
 
   @override
@@ -14,7 +13,6 @@ class Sign extends StatefulWidget {
 }
 
 class _SignState extends State<Sign> {
-  final bool onPressed = false;
   final PageController _controller = PageController(
     initialPage: 0,
   );
@@ -27,88 +25,103 @@ class _SignState extends State<Sign> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScopeNode currentFocus = FocusScope.of(context);
-        if (currentFocus.hasPrimaryFocus == false &&
-            currentFocus.focusedChild != null) {
-          FocusManager.instance.primaryFocus?.unfocus();
-        }
-      },
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.dark,
+    return SafeArea(
+      child: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (currentFocus.hasPrimaryFocus == false &&
+              currentFocus.focusedChild != null) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          }
+        },
+        child: Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarIconBrightness: Brightness.dark,
+            ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
           ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 70, bottom: 30),
-              child: Center(child: Icon(Icons.person_pin)),
-            ),
-            Row(
-              children: [
-                /** bouton connexion and underline **/
-                Expanded(
-                  child: ButtonSign(
-                    text: "Se Connecter",
-                    isSelected: currentPage == 0,
-                    onTap: () {
-                      setState(() {
-                        _controller.previousPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeIn,
-                        );
-                      });
-                    },
-                    color:
-                        onPressed ? ColorsPalette.primaryColor : Colors.black,
+          body: Column(
+            children: [
+              SizedBox(
+                width: 400,
+                child: Image.asset(
+                  'assets/images/doc (1).png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(10),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: ColorsPalette.primaryColor.withOpacity(0.2),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
-                Container(
-                  width: 2,
-                  height: 25,
-                  color: Colors.grey.shade300,
-                ),
-                Expanded(
-                  child: ButtonSign(
-                    text: "Inscription",
-                    isSelected: currentPage == 1,
-                    onTap: () {
-                      setState(() {
-                        _controller.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeIn,
-                        );
-                      });
-                    },
-                    color:
-                        onPressed ? ColorsPalette.primaryColor : Colors.black,
+              ),
+              Row(
+                children: [
+                  /** bouton connexion and underline **/
+                  Expanded(
+                    child: ButtonSign(
+                      text: "Se Connecter",
+                      isSelected: currentPage == 0,
+                      onTap: () {
+                        setState(() {
+                          _controller.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeIn,
+                          );
+                        });
+                      },
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: PageView(
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
-                controller: _controller,
-                children: const [
-                  SignIn(),
-                  SignUp(),
+                  Container(
+                    width: 2,
+                    height: 25,
+                    color: Colors.grey.shade300,
+                  ),
+                  Expanded(
+                    child: ButtonSign(
+                      text: "Inscription",
+                      isSelected: currentPage == 1,
+                      onTap: () {
+                        setState(() {
+                          _controller.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeIn,
+                          );
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
+              Expanded(
+                child: PageView(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentPage = value;
+                    });
+                  },
+                  controller: _controller,
+                  children: const [
+                    SignIn(),
+                    SignUp(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

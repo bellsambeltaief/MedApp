@@ -6,11 +6,9 @@ class ButtonSign extends StatelessWidget {
     required this.text,
     required this.onTap,
     this.isSelected = false,
-    required this.color,
   }) : super(key: key);
 
   final String text;
-  final Color color;
 
   final void Function() onTap;
 
@@ -26,9 +24,6 @@ class ButtonSign extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             text,
-            style: TextStyle(
-              color: color,
-            ),
           ),
           const SizedBox(height: 18),
           Padding(
