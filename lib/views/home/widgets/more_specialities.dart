@@ -14,7 +14,7 @@ class MoreSpecialities extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const AppBarTop(),
+              const AppBarTop(textTop: 'Specialities',),
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.0,

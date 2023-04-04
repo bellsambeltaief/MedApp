@@ -1,8 +1,8 @@
 import 'package:doc_app/views/sign/button/button_icon_text_horizontal.dart';
-import 'package:doc_app/views/sign/button/button_login.dart';
+import 'package:doc_app/widgets/buttons/button_login.dart';
 
 import 'package:doc_app/views/sign/or_divider.dart';
-import 'package:doc_app/views/sign/text_field_login.dart';
+import 'package:doc_app/widgets/text_field_login.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {

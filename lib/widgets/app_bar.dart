@@ -1,9 +1,14 @@
-import 'package:doc_app/tools/colors_palette.dart';
+
 import 'package:flutter/material.dart';
 
-class AppBarTop extends StatelessWidget {
-  const AppBarTop({super.key});
+import 'package:doc_app/tools/colors_palette.dart';
 
+class AppBarTop extends StatelessWidget {
+  const AppBarTop({
+    Key? key,
+    required this.textTop,
+  }) : super(key: key);
+  final String textTop;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,9 +34,9 @@ class AppBarTop extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const Text(
-              'Specialities',
-              style: TextStyle(
+             Text(
+             textTop,
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
               ),
