@@ -17,7 +17,7 @@ class Specialities extends StatelessWidget {
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
         ),
-        color: ColorsPalette.filedColor,
+        color: ColorsPalette.speColor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
