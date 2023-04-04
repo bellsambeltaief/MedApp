@@ -1,5 +1,7 @@
 import 'package:doc_app/tools/colors_palette.dart';
 import 'package:doc_app/views/home/home_container.dart';
+import 'package:doc_app/views/sign/sign.dart';
+import 'package:doc_app/views/sign/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -56,11 +58,50 @@ class _HomeState extends State<Home> {
               ),
             ),
             const SizedBox(height: 20),
-             const HomeContainer()
+            const HomeContainer(),
+            const SizedBox(height: 20),
+            Container(
+              height: 70,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50.0),
+                  topRight: Radius.circular(50.0),
+                ),
+                color: ColorsPalette.primaryColor,
+              ),
+              child: Center(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Sign(),
+                      ),
+                    );
+                  },
+                  child: RichText(
+                    text: const TextSpan(
+                      text: 'To contact a doctor you have to ',
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                      children: <InlineSpan>[
+                        TextSpan(
+                          text: 'Sign In',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-

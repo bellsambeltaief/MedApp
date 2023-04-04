@@ -1,4 +1,3 @@
-
 import 'package:doc_app/views/sign/button/button_icon_text_horizontal.dart';
 import 'package:doc_app/views/sign/button/button_login.dart';
 
@@ -43,13 +42,13 @@ class _CwConnexionState extends State<SignUp> {
         children: [
           TextFieldLogin(
             "Nom & Prénom",
-            controller: _email,
+  
             context: context,
           ),
           const SizedBox(height: 22),
           TextFieldLogin(
             "Email",
-            controller: _email,
+        
             context: context,
             isEmail: true,
           ),
@@ -57,14 +56,14 @@ class _CwConnexionState extends State<SignUp> {
           TextFieldLogin(
             "Mot de passe",
             context: context,
-            controller: _password,
+   
             isPassword: true,
           ),
           const SizedBox(height: 22),
           TextFieldLogin(
             "Confirmer Mot de passe",
             context: context,
-            controller: _password,
+ 
             isPassword: true,
           ),
           const SizedBox(height: 50),
@@ -95,7 +94,6 @@ class _CwConnexionState extends State<SignUp> {
             ],
           ),
           const SizedBox(height: 22),
-       
         ],
       ),
     );

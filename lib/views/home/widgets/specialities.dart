@@ -1,24 +1,40 @@
-import 'package:doc_app/tools/colors_palette.dart';
 import 'package:flutter/material.dart';
+
+import 'package:doc_app/tools/colors_palette.dart';
 
 class Specialities extends StatelessWidget {
   const Specialities({
     Key? key,
+    required this.icon,
+    required this.text,
   }) : super(key: key);
-
+  final String icon;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 50,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(50.0),
+          Radius.circular(20.0),
         ),
         color: ColorsPalette.filedColor,
       ),
-      padding: const EdgeInsets.all(8),
-      child: const Text("He'd have you all unravel at the"),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(icon),
+          const SizedBox(height: 10),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

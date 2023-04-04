@@ -1,4 +1,4 @@
-
+import 'package:doc_app/views/home/home.dart';
 import 'package:doc_app/views/sign/button/button_icon_text_horizontal.dart';
 import 'package:doc_app/views/sign/button/button_login.dart';
 import 'package:doc_app/views/sign/or_divider.dart';
@@ -7,9 +7,7 @@ import 'package:doc_app/views/sign/text_field_login.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
-  
-  static String routeName="/signIn";
- 
+  static String routeName = "/signIn";
 
   const SignIn({Key? key}) : super(key: key);
 
@@ -46,7 +44,6 @@ class _CwConnexionState extends State<SignIn> {
           TextFieldLogin(
             "Email",
             key: const Key('login_form_email_CWTextField'),
-            controller: _email,
             context: context,
             isEmail: true,
           ),
@@ -55,7 +52,6 @@ class _CwConnexionState extends State<SignIn> {
             "Mot de passe",
             key: const Key('login_form_password_CWTextField'),
             context: context,
-            controller: _password,
             isPassword: true,
           ),
           const SizedBox(height: 22),
@@ -72,7 +68,14 @@ class _CwConnexionState extends State<SignIn> {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: ButtonLogin(
               text: "Se Connecter",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Home(),
+                  ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 22),
@@ -94,7 +97,6 @@ class _CwConnexionState extends State<SignIn> {
               ),
             ],
           ),
-        
         ],
       ),
     );

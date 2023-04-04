@@ -7,16 +7,15 @@ class TextFieldLogin extends TextField {
     Key? key,
     bool isPassword = false,
     bool isEmail = false,
-    Function(String)? onChanged,
+  
     String? errorText,
-    TextEditingController? controller,
+
     required BuildContext context,
   }) : super(
           key: key,
-          autofocus: false,
-          controller: controller,
+ 
           obscureText: isPassword,
-          onChanged: onChanged,
+       
           keyboardType:
               isEmail ? TextInputType.emailAddress : TextInputType.text,
           style: const TextStyle(
