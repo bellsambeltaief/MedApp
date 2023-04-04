@@ -14,7 +14,9 @@ class MoreSpecialities extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const AppBarTop(textTop: 'Specialities',),
+              const AppBarTop(
+                textTop: 'Spécialités',
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.0,
@@ -38,23 +40,23 @@ class MoreSpecialities extends StatelessWidget {
                     children: const [
                       Specialities(
                         icon: "assets/images/doc.png",
-                        text: 'General Medecin',
+                        text: 'Médecin Généraliste',
                       ),
                       Specialities(
                         icon: "assets/images/doc.png",
-                        text: 'General Medecin',
+                        text: 'Médecin Généraliste',
                       ),
                       Specialities(
                         icon: "assets/images/doc.png",
-                        text: 'General Medecin',
+                        text: 'Médecin Généraliste',
                       ),
                       Specialities(
                         icon: "assets/images/doc.png",
-                        text: 'General Medecin',
+                        text: 'Médecin Généraliste',
                       ),
                       Specialities(
                         icon: "assets/images/doc.png",
-                        text: 'General Medecin',
+                        text: 'Médecin Généraliste',
                       ),
                     ],
                   ),

@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
                 color: ColorsPalette.primaryColor,
               ),
               child: const Padding(
-                padding:  EdgeInsets.symmetric(
+                padding: EdgeInsets.symmetric(
                   horizontal: 20.0,
                   vertical: 50,
                 ),
@@ -61,15 +61,15 @@ class _HomeState extends State<Home> {
                   },
                   child: RichText(
                     text: const TextSpan(
-                      text: 'To contact a doctor you have to ',
+                      text: 'Pour contacter un médecin merci de ',
                       style: TextStyle(
                         fontSize: 15,
                       ),
                       children: <InlineSpan>[
                         TextSpan(
-                          text: 'Sign In',
+                          text: 'Connecter',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 17,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -85,4 +85,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-

@@ -18,7 +18,7 @@ class HomeContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            "Top Rated Doctors",
+            "Médecins les mieux notés",
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -31,16 +31,16 @@ class HomeContainer extends StatelessWidget {
               scrollDirection: Axis.vertical,
               children: const [
                 RatedDoctors(
-                  speciality: 'Speciality',
-                  adress: 'Adress',
-                  name: 'Doctor Name',
+                  speciality: 'Spécialités',
+                  adress: 'Adresse',
+                  name: 'Nom du Médecin',
                   image: 'assets/images/doc.png',
                 ),
                 SizedBox(height: 20),
                 RatedDoctors(
-                  speciality: 'Speciality',
-                  adress: 'Adress',
-                  name: 'Doctor Name',
+                  speciality: 'Spécialités',
+                  adress: 'Adresse',
+                  name: 'Nom du Médecin',
                   image: 'assets/images/doc.png',
                 ),
               ],
@@ -51,7 +51,7 @@ class HomeContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Specialities",
+                "Spécialitiés",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -69,23 +69,23 @@ class HomeContainer extends StatelessWidget {
                   children: const [
                     Specialities(
                       icon: "assets/images/doc.png",
-                      text: 'General Medecin',
+                      text: 'Médecin Généraliste',
                     ),
                     Specialities(
                       icon: "assets/images/doc.png",
-                      text: 'General Medecin',
+                      text: 'Médecin Généraliste',
                     ),
                     Specialities(
                       icon: "assets/images/doc.png",
-                      text: 'General Medecin',
+                      text: 'Médecin Généraliste',
                     ),
                     Specialities(
                       icon: "assets/images/doc.png",
-                      text: 'General Medecin',
+                      text: 'Médecin Généraliste',
                     ),
                     Specialities(
                       icon: "assets/images/doc.png",
-                      text: 'General Medecin',
+                      text: 'Médecin Généraliste',
                     ),
                   ],
                 ),
@@ -101,7 +101,7 @@ class HomeContainer extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    "Show more specialities",
+                    "Afficher plus de spécialités",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.bold,

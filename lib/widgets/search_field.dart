@@ -23,7 +23,7 @@ class SearchField extends StatelessWidget {
             Icons.search,
             color: Colors.grey,
           ),
-          hintText: 'Find a doctor',
+          hintText: 'Trouver un Médecin',
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.white,

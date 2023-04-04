@@ -1,12 +1,21 @@
-import 'package:doc_app/views/account/identity.dart';
+import 'package:doc_app/tools/colors_palette.dart';
+import 'package:doc_app/views/account/widgets/otp_field.dart';
 import 'package:doc_app/widgets/app_bar.dart';
 import 'package:doc_app/widgets/buttons/button_login.dart';
 import 'package:doc_app/widgets/text_field_login.dart';
 import 'package:flutter/material.dart';
 
-class Account extends StatelessWidget {
-  static String routeName = "/account";
-  const Account({super.key});
+final List otp = [
+  const OTPField(),
+  const OTPField(),
+  const OTPField(),
+  const OTPField(),
+  const OTPField(),
+];
+
+class Identity extends StatelessWidget {
+  static String routeName = "/identity";
+  const Identity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +36,7 @@ class Account extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    "Récupérer votre compte",
+                    "Vérifier votre identité",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -36,35 +45,41 @@ class Account extends StatelessWidget {
                   ),
                   const SizedBox(height: 50),
                   const Text(
-                    "Saisissez votre e-mail ou",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                    ),
-                  ),
-                  const Text(
-                    "votre numéro de téléphone",
+                    "Saisissez le code que nous avons envoyé",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                     ),
                   ),
                   const SizedBox(height: 50),
-                  TextFieldLogin(
-                    "E-mail",
-                    context: context,
+                  SizedBox(
+                    height: 60,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: otp.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                          child: Center(
+                            child: otp[index],
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   const SizedBox(height: 20),
                   ButtonLogin(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Identity(),
-                        ),
-                      );
-                    },
-                    text: "Valider",
+                    onTap: () {},
+                    text: "Vérifier le code",
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Renvoyer le code",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
                   ),
                 ],
               ),
