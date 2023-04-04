@@ -1,5 +1,6 @@
 import 'package:doc_app/tools/colors_palette.dart';
 import 'package:doc_app/views/home/home_container.dart';
+import 'package:doc_app/widgets/search_field.dart';
 import 'package:doc_app/views/sign/sign.dart';
 import 'package:doc_app/views/sign/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -28,33 +29,12 @@ class _HomeState extends State<Home> {
                 ),
                 color: ColorsPalette.primaryColor,
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
+              child: const Padding(
+                padding:  EdgeInsets.symmetric(
                   horizontal: 20.0,
                   vertical: 50,
                 ),
-                child: TextFormField(
-                  cursorColor: Colors.white,
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50.0),
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-                    hintText: 'Find a doctor',
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+                child: SearchField(),
               ),
             ),
             const SizedBox(height: 20),
@@ -105,3 +85,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
