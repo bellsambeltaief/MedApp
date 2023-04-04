@@ -2,7 +2,6 @@ import 'package:doc_app/tools/colors_palette.dart';
 import 'package:doc_app/views/home/home_container.dart';
 import 'package:doc_app/widgets/search_field.dart';
 import 'package:doc_app/views/sign/sign.dart';
-import 'package:doc_app/views/sign/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {

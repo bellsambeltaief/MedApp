@@ -1,8 +1,7 @@
-import 'package:doc_app/tools/colors_palette.dart';
+
 import 'package:doc_app/views/account/widgets/otp_field.dart';
 import 'package:doc_app/widgets/app_bar.dart';
 import 'package:doc_app/widgets/buttons/button_login.dart';
-import 'package:doc_app/widgets/text_field_login.dart';
 import 'package:flutter/material.dart';
 
 final List otp = [
